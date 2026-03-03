@@ -5,11 +5,11 @@
 extern "C" {
 #endif // #ifdef __cplusplus
 
-#ifndef C_INIT_LIST_STATIC_DEFINE
-#  include <c_init_list/export_shared.h>
+#ifndef INIT_LIST_STATIC_DEFINE
+#  include <init_list/export_shared.h>
 #else
-#  include <c_init_list/export_static.h>
-#endif // #ifndef C_INIT_LIST_STATIC_DEFINE
+#  include <init_list/export_static.h>
+#endif // #ifndef INIT_LIST_STATIC_DEFINE
 
 #ifdef __cplusplus
 }
