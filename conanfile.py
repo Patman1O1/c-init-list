@@ -2,8 +2,8 @@ from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
 from conan.tools.build import check_min_cppstd
 
-class CInitListFile(ConanFile):
-    name = "c_init_list"
+class InitListFile(ConanFile):
+    name = "init_list"
     version = "0.1.0"
     label = "A C implementation of C++'s initializer_list"
 
