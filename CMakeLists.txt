@@ -3,15 +3,15 @@
 #-----------------------------------------------------------------------------------------------------------------------
 # Project Information
 cmake_minimum_required(VERSION 3.28.0)
-project("c-init-list"
+project("init-list"
         VERSION 0.1.0
         DESCRIPTION "A C implementation of C++'s initializer_list"
         LANGUAGES C
 )
-set(PROJECT_NAMESPACE c_init_list CACHE STRING "The namespace the project is in")
-set(PROJECT_OUTPUT_NAME c-init-list CACHE STRING "The base name that will be displayed on project output files")
-set(PROJECT_PACKAGE_NAME CInitList CACHE STRING "The name that will be displayed on CMake package related files")
-set(PROJECT_PRIMARY_TARGET c_init_list)
+set(PROJECT_NAMESPACE init_list CACHE STRING "The namespace the project is in")
+set(PROJECT_OUTPUT_NAME init-list CACHE STRING "The base name that will be displayed on project output files")
+set(PROJECT_PACKAGE_NAME InitList CACHE STRING "The name that will be displayed on CMake package related files")
+set(PROJECT_PRIMARY_TARGET init_list)
 
 # CMake Information
 cmake_file_api(
