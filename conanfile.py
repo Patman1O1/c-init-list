@@ -5,7 +5,7 @@ from conan.tools.build import check_min_cppstd
 class InitListFile(ConanFile):
     name = "init_list"
     version = "0.1.0"
-    label = "A C implementation of C++'s initializer_list"
+    description = "A C implementation of C++'s initializer_list"
 
     settings = ("os", "arch", "compiler", "build_type")
 
