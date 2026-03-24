@@ -67,7 +67,9 @@ struct init_list {
     size_t size;
 };
 
-void init_list_free(struct init_list* init_list_p);
+extern int init_list_cmp(const struct init_list* lhs_p, const struct init_list* rhs_p);
+
+extern void init_list_free(struct init_list* init_list_p);
 
 #ifdef __cplusplus
 }
