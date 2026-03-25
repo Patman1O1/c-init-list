@@ -2,6 +2,10 @@
 
 #include <init_list/init_list.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 int init_list_cmp(const struct init_list* lhs_p, const struct init_list* rhs_p) {
     if (lhs_p == nullptr || rhs_p == nullptr) {
         errno = EFAULT;
@@ -29,3 +33,7 @@ void init_list_free(struct init_list* init_list_p)  {
     init_list_p->values_p = nullptr;
     init_list_p->size = 0;
 }
+
+#ifdef __cplusplus
+}
+#endif
