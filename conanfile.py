@@ -1,6 +1,6 @@
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
-from conan.tools.build import check_min_cppstd
+from conan.tools.build import check_min_cppstd, check_min_cstd
 
 class InitListFile(ConanFile):
     name = "init_list"
@@ -9,7 +9,7 @@ class InitListFile(ConanFile):
 
     settings = ("os", "arch", "compiler", "build_type")
 
-    exports_sources = ("CMakeLists.txt", "cmake/*", "src/*", "test/*")
+    exports_sources = ("CMakeLists.txt", "cmake/*", "src/*", "include/*")
 
     options = {
         "build_shared_libs": [True, False],
@@ -28,7 +28,8 @@ class InitListFile(ConanFile):
         self.test_requires("gtest/[>=1.14.0]")
 
     def validate(self) -> None:
-        check_min_cppstd(self, "23")
+        check_min_cstd(self, "23")
+        #check_min_cppstd(self, "23")
 
     def layout(self) -> None:
         cmake_layout(self)
