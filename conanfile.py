@@ -1,10 +1,11 @@
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
-from conan.tools.build import check_min_cppstd, check_min_cstd
+from conan.tools.scm import Git
 
 class InitListFile(ConanFile):
     name = "init_list"
-    version = "0.1.0"
+    author = "Patman1O1"
+    version = "1.0.0"
     description = "A C implementation of C++'s initializer_list"
 
     settings = ("os", "arch", "compiler", "build_type")
@@ -27,10 +28,6 @@ class InitListFile(ConanFile):
         self.tool_requires("cppcheck/[>=2.12.1]")
         self.test_requires("gtest/[>=1.14.0]")
 
-    def validate(self) -> None:
-        check_min_cstd(self, "23")
-        #check_min_cppstd(self, "23")
-
     def layout(self) -> None:
         cmake_layout(self)
 
@@ -51,3 +48,8 @@ class InitListFile(ConanFile):
 
     def package(self) -> None:
         CMake(self).install()
+
+    def source(self) -> None:
+        git = Git(self)
+        git.clone("https://github.com/Patman1O1/c-init-list.git", target=".")
+        git.checkout("v1.0.0")
