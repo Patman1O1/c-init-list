@@ -1,6 +1,7 @@
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps, cmake_layout
 from conan.tools.scm import Git
+import os
 
 class InitListFile(ConanFile):
     name = "init_list"
