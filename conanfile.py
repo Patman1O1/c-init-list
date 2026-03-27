@@ -50,6 +50,7 @@ class InitListFile(ConanFile):
         CMake(self).install()
 
     def source(self) -> None:
-        git = Git(self)
-        git.clone("https://github.com/Patman1O1/c-init-list.git", target=".")
-        git.checkout("v1.0.0")
+        if not os.path.exists(os.path.join(self.source_folder, "CMakeLists.txt")):
+            git = Git(self)
+            git.clone("https://github.com/Patman1O1/c-init-list.git", target=".")
+            git.checkout("v1.0.0")
