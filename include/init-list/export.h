@@ -6,9 +6,9 @@ extern "C" {
 #endif // #ifdef __cplusplus
 
 #ifndef INIT_LIST_STATIC_DEFINE
-#  include <init_list/export_shared.h>
+#  include <init-list/export_shared.h>
 #else
-#  include <init_list/export_static.h>
+#  include <init-list/export_static.h>
 #endif // #ifndef INIT_LIST_STATIC_DEFINE
 
 #ifdef __cplusplus
