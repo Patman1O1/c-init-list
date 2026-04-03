@@ -1,6 +1,6 @@
 #include <string.h>
 
-#include <init_list/init_list.h>
+#include <init-list/init_list.h>
 
 #ifdef __cplusplus
 extern "C" {
