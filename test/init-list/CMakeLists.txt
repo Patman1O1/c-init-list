@@ -12,7 +12,7 @@ set_target_properties(${PROJECT_PRIMARY_TARGET}_test PROPERTIES
 # Include directories
 target_include_directories(${PROJECT_PRIMARY_TARGET}_test
         PRIVATE
-            "${CMAKE_SOURCE_DIR}/include/${PROJECT_PRIMARY_TARGET}"
+            "${CMAKE_SOURCE_DIR}/include/${PROJECT_OUTPUT_NAME}"
         PUBLIC
             "$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>"
             "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
