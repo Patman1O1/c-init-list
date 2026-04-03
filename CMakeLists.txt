@@ -4,7 +4,7 @@
 # Project Information
 cmake_minimum_required(VERSION 3.28.0)
 project("init-list"
-        VERSION 0.1.0
+        VERSION 2.0.0
         DESCRIPTION "A C implementation of C++'s initializer_list"
         LANGUAGES C
 )
