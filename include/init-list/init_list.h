@@ -9,29 +9,7 @@
 extern "C" {
 #endif // #ifdef __cplusplus
 
-#define init_list_init(type, init_list, init_list_size, ...)                    \
-    init_list.size = init_list_size;                                            \
-    init_list.values_p = (void*)calloc(init_list.size, sizeof(type));           \
-    if (init_list.values_p == nullptr) {                                        \
-        exit(errno);                                                            \
-    }                                                                           \
-                                                                                \
-    if (init_list.size > 0) {                                                   \
-        type __values[] = {__VA_ARGS__};                                        \
-        const size_t __values_size = sizeof(__values) / sizeof(__values[0]);    \
-        if (__values_size <= init_list.size && __values_size > 0) {             \
-            memcpy(init_list.values_p, __values, sizeof(type) * __values_size); \
-        } else {                                                                \
-            free(init_list.values_p);                                           \
-            errno = E2BIG;                                                      \
-            init_list.values_p = nullptr;                                       \
-        }                                                                       \
-    } else {                                                                    \
-        init_list.values_p = nullptr;                                           \
-    }                                                                           \
-
-#ifdef __GNUC__
-#define init_list_init1(type, array_size, ...) ({                                 \
+#define init_list_create(type, array_size, ...) ({                                \
     struct init_list __init_list;                                                 \
     __init_list.size = array_size;                                                \
     __init_list.values_p = (void*)calloc(__init_list.size, sizeof(type));         \
@@ -55,7 +33,6 @@ extern "C" {
     __init_list;                                                                  \
 })
 
-#endif // #ifdef __GNUC__
 
 #define init_list_at(type, init_list, index) \
     (assert(init_list.values_p != nullptr),  \
