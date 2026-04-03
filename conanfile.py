@@ -6,7 +6,7 @@ import os
 class InitListFile(ConanFile):
     name = "init_list"
     author = "Patman1O1"
-    version = "1.0.0"
+    version = "2.0.0"
     description = "A C implementation of C++'s initializer_list"
 
     settings = ("os", "arch", "compiler", "build_type")
